@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Use Roboto font for modern look */
+    margin: 0;
+    padding: 0;
+    background-image: url("../static/bg.jpeg"); /* Updated for static folder */
+    background-size: cover;           /* Cover the entire page */
+    background-repeat: no-repeat;     /* Prevent repeating */
+    background-attachment: fixed;     /* Fix background during scrolling */
+    background-position: center;      /* Center the background image */
+    color: #333;
+    height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(50, 191, 144, 0.9); /* Semi-transparent green */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;                    /* Horizontal layout */
+    justify-content: center;          /* Center-align items */
+    background-color: rgba(50, 191, 144, 0.9); /* Matching header color */
+}
+
+.nav-menu li {
+    margin-right: 20px; /* Space between buttons */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s ease; /* Smooth hover animation */
+}
+
+.nav-menu li a:hover {
+    background-color: rgba(50, 191, 144, 0.7); /* Hover effect */
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    margin: 20px auto; /* Center-align content */
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+}
+
+/* Profile Box Styles */
+.profile-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    text-align: left;
+    margin-top: 30px;
+}
+
+.profile-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-item {
+    margin-bottom: 20px; /* Space between fields */
+    display: flex;
+    flex-direction: column; /* Align labels above inputs */
+    align-items: flex-start;
+}
+
+/* Labels */
+label {
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%; /* Full-width button */
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(76, 175, 80, 0.9); /* Matching green footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Food Detection Section */
+.food-image-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.food-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.detected-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.detected-items li {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detected-items li h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.detected-items li p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px auto;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Upload Section */
+.upload-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.upload-section input[type="file"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column; /* Stack menu items */
+        align-items: center;
+    }
+
+    main {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .save-btn {
+        font-size: 14px; /* Adjust button size */
+        padding: 10px 15px;
+    }
+}
