@@ -267,15 +267,26 @@ def register():
     st.subheader("📝 Register")
     col1, col2, col3 = st.columns([2, 3, 2])
     with col2:
+        # New input fields
+        first_name = st.text_input("First Name", key="register_fname")
+        last_name = st.text_input("Last Name", key="register_lname")
         email = st.text_input("Email", key="register_email")
         password = st.text_input("Password", type="password", key="register_password")
+
         if st.button("Register"):
-            try:
-                cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)", (email, password))
-                conn.commit()
-                st.success("Registration successful! Please login.")
-            except sqlite3.IntegrityError:
-                st.error("Email already registered.")
+            if not first_name or not last_name or not email or not password:
+                st.error("Please fill in all the fields.")
+            else:
+                try:
+                    cursor.execute("""
+                        INSERT INTO users (first_name, last_name, email, password)
+                        VALUES (?, ?, ?, ?)
+                    """, (first_name, last_name, email, password))
+                    conn.commit()
+                    st.success("Registration successful! Please login.")
+                except sqlite3.IntegrityError:
+                    st.error("Email already registered.")
+
 
 # Nutritionix API
 def get_nutrition(food_item):
