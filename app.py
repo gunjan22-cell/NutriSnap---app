@@ -289,11 +289,19 @@ def register():
 
 
 # Nutritionix API
-def get_nutrition(food_item):
-    API_ID = "6212c08f"
-    API_KEY = "171a1d76c9748c136be2d768dbf38b36"
-    API_URL = "https://trackapi.nutritionix.com/v2/natural/nutrients"
+import os
+import requests
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch the API credentials from environment variables
+API_ID = os.getenv("NUTRITIONIX_APP_ID")
+API_KEY = os.getenv("NUTRITIONIX_APP_KEY")
+API_URL = "https://trackapi.nutritionix.com/v2/natural/nutrients"
+
+def get_nutrition(food_item):
     headers = {
         "x-app-id": API_ID,
         "x-app-key": API_KEY,
@@ -302,6 +310,7 @@ def get_nutrition(food_item):
     data = {"query": food_item}
     response = requests.post(API_URL, headers=headers, json=data)
     return response.json() if response.status_code == 200 else None
+
 
 # Nutrition data dictionary
 nutrition_data = {
